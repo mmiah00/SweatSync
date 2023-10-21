@@ -1,16 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image} from 'react-native';
 
 
 const GymInfo = ({name, address, activities}) => {
 
   return (
     <View style={styles.card}>
+      <Image source={require('../assets/barbell.png')}/>
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.address}>{address}</Text>
       <View style={styles.activities}>
         {activities.map(activity => (
-          <Text key={activity} style={styles.activity}>{activity} &#8226;</Text>  
+          <Text key={activity} style={styles.activity}>{activity}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Text> 
         ))}
       </View>
     </View>

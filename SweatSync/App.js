@@ -27,10 +27,10 @@ export default function App() {
 function renderGymCards(gyms) {
   return gyms.map(gym => (
     <GymInfo 
-      key={gym.name}
-      name={gym.name} 
-      address={gym.address}
-      activities={gym.activities}
+        key={gym.name}
+        name={gym.name} 
+        address={gym.address}
+        activities={gym.activities}
     />
   ));
 }
