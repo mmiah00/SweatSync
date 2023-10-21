@@ -3,13 +3,14 @@ import { View, Text, StyleSheet } from 'react-native';
 
 
 const GymInfo = ({name, address, activities}) => {
+
   return (
     <View style={styles.card}>
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.address}>{address}</Text>
       <View style={styles.activities}>
         {activities.map(activity => (
-          <Text key={activity} style={styles.activity}>{activity}</Text>  
+          <Text key={activity} style={styles.activity}>{activity} &#8226;</Text>  
         ))}
       </View>
     </View>
@@ -30,10 +31,12 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold', 
+    textAlign: "center"
   },
   address: {
-    marginVertical: 10
+    marginVertical: 10, 
+    textAlign: "center"
   },
   activities: {
     flexDirection: 'row',
