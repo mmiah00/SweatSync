@@ -54,7 +54,7 @@ function CustomDrawerContent(props) {
 
 const Drawer = createDrawerNavigator();
 
-export default function MyDrawer() {
+function MyDrawer() {
   return (
     <Drawer.Navigator
       useLegacyImplementation
@@ -68,3 +68,10 @@ export default function MyDrawer() {
   );
 }
 
+export default function side() {
+  return (
+    <NavigationContainer>
+      <MyDrawer />
+    </NavigationContainer>
+  );
+}

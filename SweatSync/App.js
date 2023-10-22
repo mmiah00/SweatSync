@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Sidebar from './Navigation/Sidebar';
 import GymInfo from "./components/Gyminfo"; 
 
 export default function App() {
@@ -17,7 +18,9 @@ export default function App() {
   ]; 
 
   return (
+    <Sidebar />
     <View style={styles.container}>
+      <Sidebar />
       <StatusBar style="auto" />
       {renderGymCards(gyms)}
     </View>
