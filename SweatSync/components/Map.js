@@ -1,9 +1,8 @@
-import React from 'react';
 import MapView, { Marker } from "react-native-maps";
 import { StyleSheet, Text, View } from 'react-native';
 
 const Map = () => {
-  let myCoordinate = { latitude: 41.068038, longitude: 29.061824}
+  let myCoordinate = { latitude: 41.068038, longitude: 29.061824};
   return (
     <MapView style = {styles.map}>
         <Marker coordinate = { myCoordinate } />
@@ -20,6 +19,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     map: {
+        flex: 1,
         width: "100%",
         height: "100%",
     },
@@ -27,4 +27,3 @@ const styles = StyleSheet.create({
 
 
 export default Map;
-
