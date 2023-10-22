@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import GymInfo from "./components/Gyminfo"; 
 import React from "react";
 import "./style.css";
+import Map from "./components/Map";
 
 export default function App() {
   const gyms = [
@@ -20,13 +21,15 @@ export default function App() {
   ]; 
 
   return (
-    <View style={styles.container}>
+    // <View style="styles.container">
+    //   <Map />
+    // <View />
+    //<React.Fragment>
       <Sidebar />
-      <StatusBar style="auto" />
-      {renderGymCards(gyms)}
-    </View>
-  );
-}
+      //{renderGymCards(gyms)}
+    //</React.Fragment>
+  )
+};
 
 function renderGymCards(gyms) {
   return gyms.map(gym => (

@@ -6,13 +6,18 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
+import Map from "./Map";
+import GymInfo from "./Gyminfo"
+import React from "react";
 
 
 function Home({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Map Screen</Text>
-      
+      <React.Fragment>
+        <Map />
+        {renderGymCards(gyms)}
+      </React.Fragment>
     </View>
   );
 }
@@ -32,6 +37,15 @@ function Profile() {
     </View>
   )
 }
+
+function ConnectWearable() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>Connect Wearable </Text>
+    </View>
+  )
+}
+
 function Settings() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -63,9 +77,33 @@ function MyDrawer() {
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Feed" component={Feed} />
       <Drawer.Screen name="Profile" component={Profile} />
+      <Drawer.Screen name="Connect Wearable" component={ConnectWearable} />
       <Drawer.Screen name="Settings" component={Settings} />
     </Drawer.Navigator>
   );
+}
+const gyms = [
+    {
+      name: "Gym A",
+      address: "123 Main St",
+      activities: ["Yoga", "Pilates"]
+    },
+    {
+      name: "Gym B", 
+      address: "456 Park Ave",
+      activities: ["Basketball", "Boxing"]
+    }
+  ];
+
+function renderGymCards(gyms) {
+  return gyms.map(gym => (
+    <GymInfo 
+        key={gym.name}
+        name={gym.name} 
+        address={gym.address}
+        activities={gym.activities}
+    />
+  ));
 }
 
 export default function side() {

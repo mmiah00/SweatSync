@@ -6,7 +6,7 @@ const GymInfo = ({name, address, activities}) => {
 
   return (
     <View style={styles.card}>
-      <Image source={require('../assets/barbell.png')}/>
+      <Image source={require('../assets/barbell.png')} style={styles.image}/>
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.address}>{address}</Text>
       <View style={styles.activities}>
@@ -29,7 +29,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 1, 
-    width: "50%"
+    width: "75%"
+  },
+  image: {
+    width: 60,
+    height: 60
   },
   name: {
     fontSize: 20,
