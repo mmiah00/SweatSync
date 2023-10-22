@@ -4,8 +4,23 @@ import Sidebar from './components/Sidebar';
 import GymInfo from "./components/Gyminfo"; 
 import React from "react";
 import "./style.css";
+import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';  
+
 
 export default function App() {
+  const [user, setUser] = useState(null);
+
+  const signIn = async () => {
+    try {
+      await GoogleSignin.hasPlayServices();
+      const userInfo = await GoogleSignin.signIn();
+      setUser(userInfo); // update user state
+      
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const gyms = [
     {
       name: "Gym A",
@@ -21,12 +36,29 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Sidebar />
-      <StatusBar style="auto" />
-      {renderGymCards(gyms)}
+
+      {user ? (
+        // Show app content
+        <> 
+          <Sidebar />
+          <StatusBar style="auto" />
+          {renderGymCards(gyms)}
+        </>
+      ) : (  
+        // Show Google sign-in button
+        <GoogleSigninButton
+          onPress={signIn}
+        />
+      )}
+
     </View>
   );
 }
+
+GoogleSignin.configure({
+  webClientId: '708515035791-pinpdso572m43l1s0c51uphd84s42pq5.apps.googleusercontent.com', 
+  offlineAccess: true
+});
 
 function renderGymCards(gyms) {
   return gyms.map(gym => (
