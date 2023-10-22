@@ -1,11 +1,59 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Sidebar from './Navigation/Sidebar';
+import GymInfo from "./components/Gyminfo"; 
 
 export default function App() {
+  const gyms = [
+    {
+      name: "Gym A",
+      address: "123 Main St",
+      activities: ["Yoga", "Pilates"]
+    },
+    {
+      name: "Gym B", 
+      address: "456 Park Ave",
+      activities: ["Basketball", "Boxing"]
+    }
+  ]; 
+
   return (
     <Sidebar />
+    <View style={styles.container}>
+      <Sidebar />
+      <StatusBar style="auto" />
+      {renderGymCards(gyms)}
+    </View>
   );
+}
+
+function renderGymCards(gyms) {
+  return gyms.map(gym => (
+    <GymInfo 
+        key={gym.name}
+        name={gym.name} 
+        address={gym.address}
+        activities={gym.activities}
+    />
+  ));
+}
+
+export const getCurrentLocation = (simulator) => {
+  return async (dispatch) => {
+    if (!simulator) {
+      let { status } = await Permissions.askAsync(Permissions.LOCATION);
+
+      if (status !== 'granted') {
+        dispatch(gotCurrentLocationError('Permission to access location was denied'))
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      dispatch(gotCurrentLocation(location))
+    } else {
+      // Demo location for simulator
+      dispatch(gotCurrentLocation(chicagoFSA))
+    }
+  }
 }
 
 const styles = StyleSheet.create({
