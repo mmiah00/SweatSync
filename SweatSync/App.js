@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Sidebar from './Navigation/Sidebar';
+import Sidebar from './components/Sidebar';
 import GymInfo from "./components/Gyminfo"; 
 import React from "react";
 import "./style.css";
@@ -20,7 +20,6 @@ export default function App() {
   ]; 
 
   return (
-    <Sidebar />
     <View style={styles.container}>
       <Sidebar />
       <StatusBar style="auto" />
