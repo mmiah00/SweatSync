@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {View, Linking, Button} from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 
-const api_key = 'your_api_key';
-const reference_id = 'your_reference_id';
+const api_key = 'T49W31RmoI77a9L8FYoqwD2Czw5BXvjW';
+const reference_id = 'arufakhanom-testing-v1O3TaLjvu';
 
 /// The getWidgetAsync function is an asynchronous function that fetches the widget session URL from the Terra API
 /// and sets the url state using the setUrl function.
