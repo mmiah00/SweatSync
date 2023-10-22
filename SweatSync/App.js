@@ -38,17 +38,32 @@ function renderGymCards(gyms) {
 }
 
 const gyms = [
-    {
-      name: "Gym A",
-      address: "123 Main St",
-      activities: ["Yoga", "Pilates"]
-    },
-    {
-      name: "Gym B",
-      address: "456 Park Ave",
-      activities: ["Basketball", "Boxing"]
-    }
-  ];
+  {
+    name: "Fitness & Fuel",
+    address: "390 Western Ave, Brighton, MA",
+    activities: ["Strength Training", "Women's Personal Trainig", "Group Exercises"]
+  },
+  {
+    name: "Amplify Fitness", 
+    address: "1230 Soldiers Field Road, Boston, MA",
+    activities: ["Kickboxing", "Personal Training", "Youth Classes", "Outdoor Classes"]
+  },
+  {
+    name: "Red City Fitness", 
+    address: "1 Braintree St, Allston, MA",
+    activities: ["Group Class", "Boxing", "Personal Training", ]
+  },
+  {
+    name: "NB Fitness Club, LLC", 
+    address: "40 Life St, Brighton, MA",
+    activities: ["Cycling", "Kickboxing", "Resistance Training"]
+  },
+  {
+    name: "GymIt", 
+    address: "920 Commonwealth Ave, Boston, MA",
+    activities: ["Personal Training", "Resistance Training", "Strength Training"]
+  }
+];
 
 function Home({ navigation }) {
   return (
