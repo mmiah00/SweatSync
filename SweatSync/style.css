@@ -1,0 +1,86 @@
+.home-screen {
+    background-color: #cebbd4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    }
+    .home-screen .overlap-group-wrapper {
+    background-color: #cebbd4;
+    height: 844px;
+    width: 390px;
+    }
+    .home-screen .overlap-group {
+    height: 771px;
+    position: relative;
+    width: 389px;
+    }
+    .home-screen .streamline-interface {
+    height: 14px;
+    left: 22px;
+    position: absolute;
+    top: 15px;
+    width: 14px;
+    }
+    .home-screen .screenshot {
+    height: 652px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 389px;
+    }
+    .home-screen .vector {
+    height: 21px;
+    left: 11px;
+    position: absolute;
+    top: 15px;
+    width: 27px;
+    }
+    .home-screen .any-plans-for-the {
+    color: #000000;
+    font-family: "Inika-Regular", Helvetica;
+    font-size: 45px;
+    font-weight: 400;
+    left: 19px;
+    letter-spacing: 0;
+    line-height: 48px;
+    position: absolute;
+    text-align: center;
+    top: 718px;
+    white-space: nowrap;
+    width: 358px;
+    }
+    .home-screen .text-wrapper {
+    color: #000000;
+    font-family: "Inika-Regular", Helvetica;
+    font-size: 45px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 48px;
+    }
+    .home-screen .span {
+    font-family: "Corinthia-Regular", Helvetica;
+    }
+    .home-screen .subway-up {
+    height: 124px;
+    left: 160px;
+    position: absolute;
+    top: 647px;
+    width: 124px;
+    }
+    .home-screen .ph-map-pin-fill {
+    height: 39px;
+    left: 252px;
+    position: absolute;
+    top: 79px;
+    width: 40px;
+    }
+    .home-screen .img {
+    height: 39px;
+    left: 73px;
+    position: absolute;
+    top: 498px;
+    width: 40px;
+    }
+    
